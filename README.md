@@ -1,1 +1,1 @@
-# static_apps
+# static-apps
