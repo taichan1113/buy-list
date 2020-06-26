@@ -35,13 +35,8 @@ h1 {
   border: solid 1px #555;
 }
 
-#submit {
-  /* display: none; */
-}
-
 ul {
   padding-left: 15px;
-  /* list-style: none; */
 }
 
 li {
