@@ -1,0 +1,48 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  width: 50%;
+  margin: 30px auto;
+}
+
+.add-form {
+  display: flex;
+  padding: 0;
+}
+
+#input {
+  /* margin: 0; */
+  border-radius: 4px 0 0 4px;
+  border: solid 1px #555;
+}
+
+#input:focus {
+  outline-width: 0;
+}
+
+#cart {
+  background-color: #aaa;
+  padding: 7px;
+  border-radius: 0 4px 4px 0;
+  border: solid 1px #555;
+}
+
+#submit {
+  /* display: none; */
+}
+
+ul {
+  padding-left: 15px;
+  /* list-style: none; */
+}
+
+li {
+  text-align: left;
+}
