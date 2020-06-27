@@ -54,6 +54,8 @@ h1 {
 }
 
 #buy-list > div > input {
+  width: 15px;
+  height: 15px;
   display: inline-block;
   margin: auto 10px 10px;
 }
