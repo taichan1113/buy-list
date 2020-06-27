@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>買い物リスト</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="./css/styles.css">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 <body>
   <h1>買い物リスト</h1>
   <div class="container">
     <!-- 入力フォーム -->
-    <form class="add-form">
+    <form class="add-form" onsubmit="return false">
       <input id="input" type="text" autofocus>
       <buttun id="submit" type="submit">
         <span id="cart" class="fa fa-shopping-cart"></span>
@@ -19,9 +19,14 @@
     </form>
 
     <!-- リスト表示 -->
-    <ul id="buy-list"></ul>
+    <div id="buy-list">
+      <!-- <div>
+        <input type="checkbox">
+        <p>test1</p>
+      </div> -->
+    </div>
   </div>
-  <script src="js/main.js"></script>
+  <script src="./js/main.js"></script>
 
 </body>
 </html>

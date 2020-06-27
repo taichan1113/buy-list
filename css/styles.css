@@ -1,6 +1,7 @@
 body {
   padding: 0;
   margin: 0;
+  background-color: #ffefd6;
 }
 
 h1 {
@@ -12,6 +13,7 @@ h1 {
   margin: 30px auto;
 }
 
+/* 入力フォーム */
 .add-form {
   display: flex;
   padding: 0;
@@ -19,9 +21,9 @@ h1 {
 }
 
 #input {
-  /* margin: 0; */
   border-radius: 4px 0 0 4px;
   border: solid 1px #555;
+  flex-grow: 1;
 }
 
 #input:focus {
@@ -35,10 +37,27 @@ h1 {
   border: solid 1px #555;
 }
 
-ul {
-  padding-left: 15px;
+/* リスト表示 */
+#buy-list {
+  margin-top: 10px;
+  padding: 5px;
+  list-style: none;
+  border: solid 1px orange;
+  border-radius: 4px;
 }
 
-li {
-  text-align: left;
+#buy-list > div  {
+  margin: 3px 0;
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+}
+
+#buy-list > div > input {
+  display: inline-block;
+  margin: auto 10px 10px;
+}
+
+#buy-list > div > p {
+  margin: 5px;
 }
