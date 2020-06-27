@@ -6,6 +6,7 @@ body {
 
 h1 {
   text-align: center;
+  color: rgb(53, 35, 6);
 }
 
 .container {
@@ -51,22 +52,23 @@ h1 {
   background-color: white;
   border-radius: 4px;
   display: flex;
+  align-items: center;
 }
 
-#buy-list > div > input {
-  /* display: none; */
 
-  width: 15px;
-  height: 15px;
-  margin: auto 10px 10px;
-}
-
-#buy-list > div > p {
+#buy-list > div > label {
+  padding-left: 10px;
   margin: 5px;
+  flex-grow: 1;
+  color: #333;
+}
+
+#buy-list > div > label > input {
+  display: none;
 }
 
 /* チェック時の動作 */
 .checked {
-  text-decoration: line-through #555;
-  color: #ccc;
+  background-color: rgb(140, 240, 185);
+  border-radius: 4px;
 }

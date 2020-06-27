@@ -7,19 +7,23 @@ let buy_list    = document.getElementById('buy-list');
 submit_cart.addEventListener('click', () => {
   if  (document.getElementById('input').value !== '') {
     let list  = document.createElement('div'  );
+
     let check = document.createElement('input');
     check.type = 'checkbox';
-    let p = document.createElement('p');
-    p.innerText = document.getElementById('input').value;
-    list.appendChild(check);
-    list.appendChild(p);
-    list.firstElementChild.addEventListener('change', () => {
-      if (list.lastElementChild.className === 'checked') {
-        list.lastElementChild.classList.remove('checked');
+
+    let label = document.createElement('label');
+    label.innerText = document.getElementById('input').value;
+    label.appendChild(check);
+
+    label.firstElementChild.addEventListener('change', () => {
+      if (label.className === 'checked') {
+        label.classList.remove('checked');
       } else {
-        list.lastElementChild.classList.add('checked');
+        label.classList.add('checked');
       }
     });
+
+    list.appendChild(label);
     buy_list.appendChild(list);
   }
   document.getElementById('input').value = '';
