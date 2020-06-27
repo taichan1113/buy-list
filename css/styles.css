@@ -54,15 +54,19 @@ h1 {
 }
 
 #buy-list > div > input {
+  /* display: none; */
+
   width: 15px;
   height: 15px;
   margin: auto 10px 10px;
 }
 
-#buy-list > div > label {
+#buy-list > div > p {
   margin: 5px;
 }
 
+/* チェック時の動作 */
 .checked {
   text-decoration: line-through #555;
+  color: #ccc;
 }

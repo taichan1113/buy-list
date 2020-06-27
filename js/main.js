@@ -9,12 +9,11 @@ submit_cart.addEventListener('click', () => {
     let list  = document.createElement('div'  );
     let check = document.createElement('input');
     check.type = 'checkbox';
-    let label = document.createElement('label');
-    label.innerText = document.getElementById('input').value;
+    let p = document.createElement('p');
+    p.innerText = document.getElementById('input').value;
     list.appendChild(check);
-    list.appendChild(label);
+    list.appendChild(p);
     list.firstElementChild.addEventListener('change', () => {
-      // let check_judge = list.lastElementChild.classList;
       if (list.lastElementChild.className === 'checked') {
         list.lastElementChild.classList.remove('checked');
       } else {
