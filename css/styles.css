@@ -56,10 +56,13 @@ h1 {
 #buy-list > div > input {
   width: 15px;
   height: 15px;
-  display: inline-block;
   margin: auto 10px 10px;
 }
 
-#buy-list > div > p {
+#buy-list > div > label {
   margin: 5px;
+}
+
+.checked {
+  text-decoration: line-through #555;
 }
