@@ -57,8 +57,8 @@ h1 {
 
 
 #buy-list > div > label {
-  padding-left: 10px;
-  margin: 5px;
+  padding: 5px 0 5px 10px;
+  /* margin: 5px; */
   flex-grow: 1;
   color: #333;
 }
@@ -71,4 +71,9 @@ h1 {
 .checked {
   background-color: rgb(140, 240, 185);
   border-radius: 4px;
+}
+
+.remark {
+  background-color: rgb(255, 177, 177);
+  transition: 0.5s;
 }

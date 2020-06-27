@@ -10,11 +10,16 @@ class Cart {
 
   event() {
     this.btn.addEventListener('click', () => {
-      let check_list = new CheckList(this.item.value);
-      check_list.listening();
+      if (this.item.value){
+        let check_list = new CheckList(this.item.value);
+        check_list.listening();
+        this.list.appendChild(check_list.list);
+        this.item.classList.remove('remark');
+      } else {
+        this.item.classList.add('remark');
+      }
       this.item.value = '';
       this.item.focus();
-      this.list.appendChild(check_list.list);
     });
   }
 } //end of class Cart
@@ -32,15 +37,13 @@ class CheckList {
   }
 
   listening() {
-    if (this.text !== '') {
-      this.check.addEventListener('change', () => {
-        if (this.label.className === 'checked') {
-          this.label.classList.remove('checked');
-        } else {
-          this.label.classList.add('checked');
-        }
-      });
-    }
+    this.check.addEventListener('change', () => {
+      if (this.label.className === 'checked') {
+        this.label.classList.remove('checked');
+      } else {
+        this.label.classList.add('checked');
+      }
+    });
   }
 } // end of class CheckList
 
