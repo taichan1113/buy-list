@@ -67,10 +67,17 @@ h1 {
   display: none;
 }
 
-/* チェック時の動作 */
+/* リストの動作 */
 .checked {
   background-color: rgb(140, 240, 185);
   border-radius: 4px;
+}
+
+.close {
+  padding: 7px;
+  margin-right: 3px;
+  background-color: #aaa;
+  border-radius: 50%;
 }
 
 .remark {

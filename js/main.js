@@ -3,16 +3,17 @@
 
 class Cart {
   constructor(){
+    this.item = document.getElementById('input'    );
     this.btn  = document.getElementById('submit'   );
     this.list = document.getElementById('buy-list' );
-    this.item = document.getElementById('input'    );
   }
 
   event() {
     this.btn.addEventListener('click', () => {
       if (this.item.value){
         let check_list = new CheckList(this.item.value);
-        check_list.listening();
+        check_list.checkListening();
+        check_list.closeListening();
         this.list.appendChild(check_list.list);
         this.item.classList.remove('remark');
       } else {
@@ -28,15 +29,18 @@ class CheckList {
   constructor(list_text) {
     this.text = list_text;
     this.list = document.createElement('div'  );
+    this.close = document.createElement('span');
+    this.close.classList.add('fa', 'fa-trash-alt', 'close');
     this.check = document.createElement('input');
     this.check.type = 'checkbox';
     this.label = document.createElement('label');
     this.label.innerText = this.text;
     this.label.appendChild(this.check);
     this.list.appendChild(this.label);
+    this.list.appendChild(this.close);
   }
 
-  listening() {
+  checkListening() {
     this.check.addEventListener('change', () => {
       if (this.label.className === 'checked') {
         this.label.classList.remove('checked');
@@ -45,6 +49,13 @@ class CheckList {
       }
     });
   }
+
+  closeListening() {
+    this.close.addEventListener('click', () => {
+      console.log('deleted?');
+      this.list.remove();
+    });
+  };
 } // end of class CheckList
 
 let cart = new Cart();
