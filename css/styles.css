@@ -47,7 +47,7 @@ h1 {
   border-radius: 4px;
 }
 
-#buy-list > div  {
+#buy-list > form  {
   margin: 5px 0;
   background-color: white;
   border-radius: 4px;
@@ -57,7 +57,7 @@ h1 {
 }
 
 
-#buy-list > div > label {
+#buy-list > form > label {
   /* height: 100%; */
   flex-grow: 1;
   color: #333;
@@ -66,7 +66,7 @@ h1 {
   vertical-align: middle;
 }
 
-#buy-list > div > label > input {
+#buy-list > form > label > input {
   display: none;
 }
 

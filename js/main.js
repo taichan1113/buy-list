@@ -2,22 +2,35 @@
 {
 
 class Cart {
-  constructor(){
+  constructor(storage){
+    this.storage = storage;
     this.item = document.getElementById('input'    );
     this.btn  = document.getElementById('submit'   );
     this.list = document.getElementById('buy-list' );
+    this.loadStorage();
+  }
+
+  loadStorage() {
+    for (let i=0; i<this.storage.length; i++){
+      let check_list = new CheckList(this.storage.key(i));
+      check_list.label.classList.add(this.storage.getItem(this.storage.key(i)));
+      check_list.checkListening(this.storage);
+      check_list.closeListening(this.storage);
+      this.list.appendChild(check_list.list);
+    }
   }
 
   event() {
     this.btn.addEventListener('click', () => {
-      if (this.item.value){
+      if (!this.item.value || this.storage.getItem(this.item.value)){
+        this.item.classList.add('remark');
+      } else {
+        this.storage.setItem(this.item.value, 'unchecked');
         let check_list = new CheckList(this.item.value);
-        check_list.checkListening();
-        check_list.closeListening();
+        check_list.checkListening(this.storage);
+        check_list.closeListening(this.storage);
         this.list.appendChild(check_list.list);
         this.item.classList.remove('remark');
-      } else {
-        this.item.classList.add('remark');
       }
       this.item.value = '';
       this.item.focus();
@@ -26,9 +39,9 @@ class Cart {
 } //end of class Cart
 
 class CheckList {
-  constructor(list_text) {
-    this.text = list_text;
-    this.list = document.createElement('div'  );
+  constructor(text) {
+    this.text = text;
+    this.list = document.createElement('form'  );
     this.close = document.createElement('span');
     this.close.classList.add('fa', 'fa-trash-alt', 'close');
     this.check = document.createElement('input');
@@ -40,25 +53,39 @@ class CheckList {
     this.list.appendChild(this.close);
   }
 
-  checkListening() {
+  checkListening(storage) {
     this.check.addEventListener('change', () => {
-      if (this.label.className === 'checked') {
+      if (storage.getItem(this.text) === 'checked') {
         this.label.classList.remove('checked');
+        storage.setItem(this.text, 'unchecked');
       } else {
         this.label.classList.add('checked');
+        storage.setItem(this.text, 'checked');
       }
     });
   }
 
-  closeListening() {
+  closeListening(storage) {
     this.close.addEventListener('click', () => {
-      console.log('deleted?');
       this.list.remove();
+      storage.removeItem(this.text);
     });
   };
+
+  storeStorage(){
+
+  }
 } // end of class CheckList
 
-let cart = new Cart();
+
+// class strageOrganizer {
+//   constructor(cart){
+//   }
+// } // end of class strageOrganizer
+
+
+let s = localStorage;
+let cart = new Cart(s);
 cart.event();
 
 }
